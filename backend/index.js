@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({ origin: true }));
 
+app.get("/", (req, res) => {
+  res.send("Server is running");
+});
+
 app.post("/authenticate", async (req, res) => {
   const { username, password } = req.body;
   try {
